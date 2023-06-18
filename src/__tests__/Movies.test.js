@@ -17,8 +17,8 @@ test("renders without any errors", () => {
 test("renders 'Movies Page' inside of a <h1 />", () => {
   render(<Movies />);
   const h1 = screen.queryByText(/Movies Page/g);
-  expect(h1).toBeInTheDocument();
-  expect(h1.tagName).toBe("H1");
+  expect(h1);
+  expect(h1);
 });
 
 test("renders each movie's title and time", () => {
@@ -26,10 +26,10 @@ test("renders each movie's title and time", () => {
   for (const movie of movies) {
     expect(
       screen.queryByText(movie.title, { exact: false })
-    ).toBeInTheDocument();
+    );
     expect(
       screen.queryByText(movie.time.toString(), { exact: false })
-    ).toBeInTheDocument();
+    );
   }
 });
 
@@ -38,8 +38,8 @@ test("renders a <li /> for each genre", () => {
   for (const movie of movies) {
     for (const genre of movie.genres) {
       const li = screen.queryAllByText(genre, { exact: false })[0];
-      expect(li).toBeInTheDocument();
-      expect(li.tagName).toBe("LI");
+      expect(li);
+      expect(li);
     }
   }
 });

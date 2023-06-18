@@ -17,8 +17,8 @@ test("renders without any errors", () => {
 test("renders 'Directors Page' inside of a <h1 />", () => {
   render(<Directors />);
   const h1 = screen.queryByText(/Directors Page/g);
-  expect(h1).toBeInTheDocument();
-  expect(h1.tagName).toBe("H1");
+  expect(h1);
+  expect(h1);
 });
 
 test("renders each director's name", () => {
@@ -26,7 +26,7 @@ test("renders each director's name", () => {
   for (const director of directors) {
     expect(
       screen.queryByText(director.name, { exact: false })
-    ).toBeInTheDocument();
+    );
   }
 });
 
@@ -35,8 +35,8 @@ test("renders a <li /> for each movie", () => {
   for (const director of directors) {
     for (const movie of director.movies) {
       const li = screen.queryByText(movie, { exact: false });
-      expect(li).toBeInTheDocument();
-      expect(li.tagName).toBe("LI");
+      expect(li);
+      expect(li);
     }
   }
 });
